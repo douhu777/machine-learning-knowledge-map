@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>机器学习知识记忆网络</title>
+  <meta name="description" content="根据《机器学习笔记》整理的交互式知识导图">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%230b1220'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%235eead4'/%3E%3Cpath d='M32 24V9M39 27l13-8M39 37l13 8M25 27l-13-8M25 37l-13 8M32 40v15' stroke='%235eead4' stroke-width='4'/%3E%3C/svg%3E">
+  <style>
+    :root{--bg:#07101d;--panel:#0d1929;--panel2:#111f31;--line:#38506d;--text:#edf5ff;--muted:#96a9c2;--cyan:#5eead4;--blue:#60a5fa;--amber:#fbbf24;--violet:#c084fc;--rose:#fb7185;--green:#86efac}
+    *{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,"Microsoft YaHei",system-ui,sans-serif}button,input{font:inherit}.app{height:100%;display:grid;grid-template-rows:auto 1fr}.topbar{display:flex;align-items:center;gap:18px;padding:14px 18px;border-bottom:1px solid #1e3046;background:#091421e8;backdrop-filter:blur(12px);z-index:10}.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}.brand-dot{width:15px;height:15px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px #5eead4aa}.brand h1{font-size:1.05rem;margin:0}.brand span{font-size:.76rem;color:var(--muted)}.tools{display:flex;align-items:center;gap:8px;margin-left:auto}.tools button,.search{border:1px solid #2a4059;background:#101e30;color:var(--text);border-radius:10px;min-height:38px}.tools button{width:38px;cursor:pointer}.tools button:hover,.tools button:focus-visible{border-color:var(--cyan);outline:none}.search{width:min(300px,28vw);padding:0 12px;outline:none}.search:focus{border-color:var(--cyan)}.main{display:grid;grid-template-columns:minmax(0,1fr) 390px;min-height:0}.canvas-wrap{position:relative;min-width:0;overflow:hidden;background:radial-gradient(circle at 50% 50%,#10233a 0,#091523 37%,#07101d 72%)}svg{width:100%;height:100%;touch-action:none;cursor:grab}svg.dragging{cursor:grabbing}.hint{position:absolute;left:16px;bottom:14px;color:var(--muted);font-size:.78rem;background:#07101dcc;border:1px solid #20364f;padding:8px 11px;border-radius:10px;pointer-events:none}.legend{position:absolute;left:16px;top:14px;display:flex;flex-wrap:wrap;gap:8px;max-width:520px}.legend span{background:#07101dcc;border:1px solid #20364f;border-radius:999px;padding:6px 9px;font-size:.73rem;color:#c9d7e8}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.side{border-left:1px solid #1e3046;background:linear-gradient(180deg,var(--panel),#091523);padding:24px;overflow:auto}.eyebrow{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan);font-weight:700}.side h2{font-size:1.55rem;line-height:1.25;margin:8px 0 8px}.side .summary{font-size:.96rem;line-height:1.75;color:#c5d3e3}.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.tag{font-size:.74rem;padding:5px 8px;border-radius:999px;border:1px solid #324963;color:#c4d4e6}.side h3{font-size:.88rem;color:#dce9f7;margin:22px 0 8px}.side ul{margin:0;padding-left:19px;color:#b9c8d9;line-height:1.7;font-size:.9rem}.relation-box{border:1px solid #2a4059;background:#101e30;border-radius:14px;padding:14px;margin-top:18px}.relation-box strong{color:var(--cyan)}.correction{border-left:3px solid var(--amber);padding:10px 12px;background:#fbbf240d;color:#e7d6a5;font-size:.87rem;line-height:1.65;margin-top:12px}.empty{height:100%;display:flex;flex-direction:column;justify-content:center}.empty .mini-map{width:76px;height:76px;margin-bottom:18px}.empty p{color:var(--muted);line-height:1.7}.edge-visible{stroke:var(--line);stroke-width:1.6;opacity:.66;fill:none}.edge-hit{stroke:transparent;stroke-width:14;fill:none;cursor:pointer}.edge-group:hover .edge-visible,.edge-group.active .edge-visible{stroke:var(--cyan);stroke-width:3;opacity:1}.edge-label{font-size:11px;fill:#9bb0c9;paint-order:stroke;stroke:#07101d;stroke-width:4;pointer-events:none}.node{cursor:pointer}.node circle{stroke:#08111e;stroke-width:4;transition:.18s}.node:hover circle,.node.active circle{stroke:#fff;filter:drop-shadow(0 0 10px currentColor)}.node text{fill:#f4f8ff;font-size:13px;font-weight:650;text-anchor:middle;paint-order:stroke;stroke:#07101d;stroke-width:5;stroke-linejoin:round;pointer-events:none}.node.root text{font-size:16px}.node.dim{opacity:.14}.edge-group.dim{opacity:.06}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:850px){.main{grid-template-columns:1fr;grid-template-rows:58vh 1fr}.side{border-left:0;border-top:1px solid #1e3046;padding:18px}.topbar{gap:8px;padding:10px}.brand span{display:none}.search{width:42vw}.hint{font-size:.69rem}.legend{display:none}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><div><h1>机器学习知识记忆网络</h1><span>源自 239 页《机器学习笔记》</span></div></div>
+    <div class="tools">
+      <label class="sr-only" for="search">搜索知识点</label><input id="search" class="search" placeholder="搜索：正则化、PCA、知识图谱…">
+      <button id="zoomOut" aria-label="缩小">−</button><button id="reset" aria-label="重置视图">◎</button><button id="zoomIn" aria-label="放大">＋</button>
+    </div>
+  </header>
+  <main class="main">
+    <section class="canvas-wrap" aria-label="交互式机器学习知识图谱">
+      <div class="legend"><span><i style="background:#5eead4"></i>总览</span><span><i style="background:#60a5fa"></i>基础与数据</span><span><i style="background:#c084fc"></i>模型</span><span><i style="background:#fbbf24"></i>训练与评估</span><span><i style="background:#fb7185"></i>专题</span></div>
+      <svg id="graph" viewBox="0 0 1200 850" role="img" aria-label="圆点与连线组成的机器学习知识图谱"><g id="viewport"><g id="edges"></g><g id="nodes"></g></g></svg>
+      <div class="hint">拖动画布 · 滚轮缩放 · 点击圆点或连线查看详情</div>
+    </section>
+    <aside class="side" id="detail"><div class="empty"><svg class="mini-map" viewBox="0 0 80 80"><circle cx="40" cy="40" r="10" fill="#5eead4"/><circle cx="12" cy="20" r="6" fill="#60a5fa"/><circle cx="68" cy="18" r="6" fill="#c084fc"/><circle cx="66" cy="64" r="6" fill="#fbbf24"/><circle cx="15" cy="62" r="6" fill="#fb7185"/><path d="M32 34L17 23M48 33L63 21M47 47L62 60M32 47L20 58" stroke="#5f7794" stroke-width="2"/></svg><div class="eyebrow">开始探索</div><h2>点击一个圆点或连线</h2><p>圆点展示知识点的定义、掌握重点和学习建议；连线解释两个知识点之间的先修、包含、对比或应用关系。</p></div></aside>
+  </main>
+</div>
+<script>
+const colors={root:'#5eead4',base:'#60a5fa',model:'#c084fc',train:'#fbbf24',topic:'#fb7185',practice:'#86efac'};
+const nodes=[
+['ml','机器学习',600,420,'root','总览','从数据中学习可泛化规律，用于预测、分类、结构发现与决策。','先理解完整建模闭环，再学习具体算法。',['问题定义','数据','模型','评估']],
+['foundation','数学与编程基础',600,95,'base','建议补充','PDF零散使用但未系统讲授的先修层：Python、线性代数、微积分、概率统计与优化。','不必先学完全部数学；遇到模型推导时按需回补。',['Python','矩阵与向量','概率统计','梯度']],
+['problem','问题定义',240,165,'base','基础','把任务识别为回归、分类或无监督学习，并明确预测目标与业务代价。','先回答“预测什么”和“错一次的代价是什么”。',['分类','回归','无监督学习']],
+['data','数据与特征',210,420,'base','基础','把原始数据转成模型可学习、可复现且没有泄漏的特征矩阵。','任何转换器都只在训练数据上拟合。',['清洗','缩放','编码','选择']],
+['training','训练与复杂度',600,735,'train','核心','用损失函数、优化、正则化和超参数控制模型学习过程及复杂度。','核心问题是偏差—方差权衡。',['损失函数','梯度下降','正则化']],
+['evaluation','模型评估',990,420,'train','核心','用独立数据和匹配任务的指标估计模型对新数据的表现。','测试集只用于最终一次评估。',['交叉验证','分类指标','回归指标']],
+['models','模型家族',925,165,'model','核心','PDF重点覆盖距离、线性、概率、树、集成、间隔和简单神经网络模型。','优先掌握线性模型、决策树和一个集成模型。',['线性模型','树模型','集成学习']],
+['topics','专题应用',930,680,'topic','选学','在基础建模闭环之上学习聚类、时间序列、概率图模型和知识图谱。','按项目需求选学，不需要一次全部掌握。',['无监督','时间序列','知识图谱']],
+['classification','分类',105,80,'base','问题类型','预测离散类别或类别概率，例如垃圾邮件、欺诈与疾病判断。','指标应根据误判成本选择，不能只看准确率。',['概率输出','决策阈值']],
+['regression','回归',285,55,'base','问题类型','预测连续数值，例如房价、销量与温度。','关注残差、误差尺度与外推风险。',['连续目标','残差']],
+['unsupervised','无监督学习',105,245,'topic','问题类型','在没有标签时发现数据结构，包括聚类、降维和异常检测。','结果需要稳定性、业务解释或外部证据验证。',['聚类','降维','异常检测']],
+['clean','清洗与缺失值',62,375,'base','数据处理','处理缺失、重复、错误类型、噪声和异常值。','填补策略必须在交叉验证内部学习。',['缺失机制','异常值']],
+['scaling','标准化与归一化',92,520,'base','数据处理','调整特征尺度。距离和梯度敏感模型通常受益，树模型通常不需要。','标准化不等于把任意数据变成正态分布。',['StandardScaler','MinMaxScaler']],
+['encoding','类别编码',250,605,'base','数据处理','把类别变量转换为模型可用形式，如One-hot、序数编码或目标编码。','无序特征不要直接用LabelEncoder制造大小关系。',['One-hot','序数编码']],
+['selection','特征选择',340,470,'base','特征工程','用过滤、包裹或嵌入方法减少无关与冗余特征。','选择过程必须只使用训练折，避免信息泄漏。',['过滤法','RFE','L1','树重要性']],
+['imbalance','类别不平衡',300,330,'base','特征工程','通过采样、类别权重和合适指标处理少数类。','SMOTE只能在训练折内执行。',['过采样','欠采样','类别权重']],
+['linear','线性模型',825,58,'model','模型','包含线性回归、逻辑回归、多项式特征以及Ridge、LASSO和弹性网。','逻辑回归输出概率；多项式回归仍是参数线性的模型。',['线性回归','逻辑回归','正则化']],
+['knn','K近邻',1045,55,'model','模型','根据邻近样本距离进行分类或回归，几乎没有显式训练过程。','K小易高方差，K大易高偏差；必须关注特征尺度。',['距离','K值','投票']],
+['bayes','朴素贝叶斯',1110,185,'model','模型','利用贝叶斯定理，在条件独立假设下组合特征证据。','速度快，常用于文本；条件独立是假设而非事实。',['先验','似然','后验']],
+['tree','决策树',1035,285,'model','模型','通过特征和阈值递归划分空间，常用基尼或信息增益选择分裂。','深树易过拟合，可限制深度、叶节点样本量或剪枝。',['熵','基尼','剪枝']],
+['ensemble','集成学习',820,285,'model','模型','组合多个学习器，包括Voting、Bagging、随机森林、Boosting与Stacking。','Bagging主要降方差；Boosting逐步修正错误。',['随机森林','Boosting','Stacking']],
+['svm','支持向量机',1110,350,'model','模型','通过最大化分类间隔建立决策边界，并可使用核函数处理非线性。','C控制惩罚，gamma控制RBF核的局部程度。',['最大间隔','软间隔','核函数']],
+['nn','神经网络基础',780,165,'model','入门','PDF讲到感知机、激活函数、前向传播和反向传播，但不构成完整深度学习课程。','掌握链式法则与梯度后再深入框架实践。',['激活函数','反向传播']],
+['loss','损失函数',490,795,'train','训练','量化预测和真实值的差异：回归常用MSE/MAE，分类常用交叉熵。','训练优化损失；业务评估指标可以不同。',['MSE','交叉熵']],
+['gradient','梯度下降',620,820,'train','训练','沿损失函数下降方向迭代更新参数，包括批量、随机和小批量方式。','学习率过大可能发散，过小收敛缓慢。',['学习率','收敛']],
+['regularization','正则化',745,775,'train','训练','在目标函数中惩罚复杂度。L1产生稀疏，L2使系数平滑收缩。','正则强度通常通过交叉验证选择。',['L1','L2','Elastic Net']],
+['biasvariance','偏差—方差',575,650,'train','核心框架','偏差反映模型系统性误差，方差反映对训练样本波动的敏感程度。','PDF对此定义不准确，应以期望预测误差分解理解。',['欠拟合','过拟合']],
+['split','数据划分',1065,500,'train','评估','将数据分为训练、验证和测试用途；时序数据必须按时间顺序划分。','随机划分前应考虑分层、分组和时间依赖。',['训练集','验证集','测试集']],
+['cv','交叉验证',1005,575,'train','评估','轮换验证折估计泛化表现并选择超参数。','预处理和采样必须包含在每一折的Pipeline里。',['K折','分层K折']],
+['classmetrics','分类指标',1140,635,'train','评估','混淆矩阵派生Accuracy、Precision、Recall、F1；ROC/AUC衡量排序能力。','类别极不平衡时同时查看PR曲线与业务阈值。',['Precision','Recall','F1','AUC']],
+['regmetrics','回归指标',1050,745,'train','评估','MAE直观稳健，MSE/RMSE更惩罚大误差，R²表示相对基线的解释程度。','R²在测试集上可能为负。',['MAE','RMSE','R²']],
+['pca','PCA降维',790,570,'topic','无监督','寻找最大方差的正交方向，用于压缩、可视化和降噪。','必须先考虑尺度；主成分未必具有业务可解释性。',['主成分','解释方差']],
+['cluster','聚类',845,690,'topic','无监督','K-means、层次聚类和DBSCAN从无标签数据中发现群组。','算法对“簇”的定义不同，不能只凭图形判断正确性。',['K-means','层次聚类','DBSCAN']],
+['timeseries','时间序列',1040,820,'topic','专题','涵盖平稳性、差分、AR/MA/ARIMA、ACF/PACF和滚动验证。','ADF原假设通常是存在单位根；小p值支持平稳。',['平稳性','ARIMA','滚动验证']],
+['hmm','HMM',890,800,'topic','概率图模型','使用隐藏状态、转移概率和观测概率描述序列；涉及前向、Viterbi和EM。','分别理解评估、解码和参数学习三个问题。',['马尔可夫链','Viterbi','EM']],
+['kg','知识图谱',735,655,'topic','专题','把实体、属性和关系组织成图，流程包括抽取、融合、加工、表示、存储和应用。','PDF示例偏旧，但“抽取—融合—服务”主线仍有价值。',['三元组','NER','关系抽取','Neo4j']]
+].map(x=>({id:x[0],label:x[1],x:x[2],y:x[3],group:x[4],type:x[5],summary:x[6],focus:x[7],tags:x[8]}));
+const edges=[
+['ml','foundation','依赖','数学与编程为理解模型与实现实验提供支撑。'],['ml','problem','起点','先确定任务类型，才能选择标签、模型与指标。'],['ml','data','输入','模型质量受数据质量和特征表示直接影响。'],['ml','models','方法','模型是从数据映射到预测或结构的函数族。'],['ml','evaluation','验证','评估用于判断模型能否泛化到新数据。'],['ml','training','学习','训练通过优化目标函数确定模型参数。'],['ml','topics','扩展','专题建立在通用机器学习闭环之上。'],
+['problem','classification','包含','分类预测离散标签或类别概率。'],['problem','regression','包含','回归预测连续数值。'],['problem','unsupervised','对比','无监督任务没有直接目标标签。'],
+['data','clean','包含','清洗确保数据有效、一致并可用于建模。'],['data','scaling','包含','缩放消除量纲对距离或优化路径的影响。'],['data','encoding','包含','类别特征需要转换为数值表示。'],['data','selection','包含','选择保留有用特征并减少冗余。'],['data','imbalance','包含','类别分布失衡需要专门处理。'],
+['models','linear','包含','线性模型以特征线性组合为核心。'],['models','knn','包含','KNN代表基于实例和距离的方法。'],['models','bayes','包含','朴素贝叶斯代表生成式概率分类。'],['models','tree','包含','树模型通过规则递归划分空间。'],['models','ensemble','包含','集成组合多个基学习器。'],['models','svm','包含','SVM以最大间隔建立边界。'],['models','nn','包含','神经网络组合多层表示与非线性。'],
+['training','loss','驱动','损失函数提供优化方向。'],['training','gradient','使用','梯度下降是常见参数优化方法。'],['training','regularization','约束','正则化限制有效模型复杂度。'],['training','biasvariance','解释','偏差—方差解释欠拟合与过拟合。'],['regularization','linear','应用','Ridge、LASSO和弹性网是正则化线性模型。'],['biasvariance','tree','调节','树深度越大通常方差越高。'],['biasvariance','knn','调节','K较小通常方差高，K较大通常偏差高。'],
+['evaluation','split','包含','独立数据划分是可信评估的前提。'],['evaluation','cv','包含','交叉验证用于选模型和超参数。'],['evaluation','classmetrics','分类','分类需要按错误成本选择指标。'],['evaluation','regmetrics','回归','回归指标刻画误差大小和相对基线表现。'],['cv','regularization','选择','正则化强度应通过验证选择。'],['scaling','knn','必要性','距离直接受不同特征量纲影响。'],['scaling','svm','重要','尺度影响间隔、距离和核函数。'],['scaling','pca','重要','方差尺度会决定主成分方向。'],
+['topics','pca','包含','PCA用于降维与降噪。'],['topics','cluster','包含','聚类用于发现无标签群组。'],['topics','timeseries','包含','时间序列处理带时间依赖的数据。'],['topics','hmm','包含','HMM用于隐藏状态序列建模。'],['topics','kg','包含','知识图谱组织实体及其关系。'],['unsupervised','pca','方法','PCA是无监督表示方法。'],['unsupervised','cluster','方法','聚类是典型无监督任务。'],['split','timeseries','约束','时间序列评估必须保持时间顺序。'],['hmm','timeseries','关联','HMM是序列概率模型，关注隐状态而非普通数值外推。'],['kg','nn','应用','现代NER与关系抽取常使用神经网络表示。']
+].map((e,i)=>({id:'e'+i,a:e[0],b:e[1],label:e[2],detail:e[3]}));
+const nodeMap=Object.fromEntries(nodes.map(n=>[n.id,n]));
+const svg=document.getElementById('graph'), viewport=document.getElementById('viewport'), edgeLayer=document.getElementById('edges'), nodeLayer=document.getElementById('nodes'), detail=document.getElementById('detail');
+function el(tag,attrs,parent){const x=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs||{}))x.setAttribute(k,v);if(parent)parent.appendChild(x);return x}
+edges.forEach(e=>{const a=nodeMap[e.a],b=nodeMap[e.b],g=el('g',{class:'edge-group','data-id':e.id,tabindex:'0',role:'button','aria-label':`${a.label}与${b.label}：${e.label}`},edgeLayer);const d=`M${a.x},${a.y} L${b.x},${b.y}`;el('path',{d,class:'edge-visible'},g);el('path',{d,class:'edge-hit'},g);const t=el('text',{x:(a.x+b.x)/2,y:(a.y+b.y)/2-5,class:'edge-label'},g);t.textContent=e.label;g.addEventListener('click',ev=>{ev.stopPropagation();showEdge(e,g)});g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();showEdge(e,g)}})});
+nodes.forEach(n=>{const g=el('g',{class:`node ${n.group==='root'?'root':''}`,'data-id':n.id,transform:`translate(${n.x} ${n.y})`,tabindex:'0',role:'button','aria-label':n.label},nodeLayer);const r=n.group==='root'?42:(['base','model','train','topic'].includes(n.group)&&['foundation','problem','data','training','evaluation','models','topics'].includes(n.id)?30:21);el('circle',{r,fill:colors[n.group]},g);const t=el('text',{y:r+22},g);t.textContent=n.label;g.addEventListener('click',ev=>{ev.stopPropagation();showNode(n,g)});g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();showNode(n,g)}})});
+function clearActive(){document.querySelectorAll('.active').forEach(x=>x.classList.remove('active'))}
+function showNode(n,g){clearActive();g.classList.add('active');const linked=edges.filter(e=>e.a===n.id||e.b===n.id).map(e=>{const other=nodeMap[e.a===n.id?e.b:e.a];return `<li><strong>${e.label}</strong> · ${other.label}</li>`}).join('');const correction=n.id==='biasvariance'?'原文把Bias和Variance简单写成几个误差数值之差，这不是标准定义。':n.id==='scaling'?'原文将标准化描述成变为标准正态分布；通常它只调整均值与标准差。':n.id==='regmetrics'?'原文称R²范围为0–1；测试集R²可能小于0。':n.id==='linear'?'原文称逻辑回归损失为凸函数但“无最优解”，这一表述有误；凸性通常有利于求全局最优。':n.id==='timeseries'?'原文部分ADF检验解释混乱，应依据原假设、统计量、临界值和p值共同判断。':'';detail.innerHTML=`<div class="eyebrow">${n.type}</div><h2>${n.label}</h2><p class="summary">${n.summary}</p><div class="tagrow">${n.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><h3>学习重点</h3><p class="summary">${n.focus}</p>${correction?`<div class="correction"><strong>原文纠错：</strong>${correction}</div>`:''}<h3>直接关系</h3><ul>${linked}</ul>`}
+function showEdge(e,g){clearActive();g.classList.add('active');const a=nodeMap[e.a],b=nodeMap[e.b];detail.innerHTML=`<div class="eyebrow">关系 · ${e.label}</div><h2>${a.label} → ${b.label}</h2><div class="relation-box"><strong>为什么相连</strong><p class="summary">${e.detail}</p></div><h3>记忆提示</h3><p class="summary">不要只背两个概念的定义；能用自己的话解释这条连线，才说明知识已经形成网络。</p><div class="tagrow"><span class="tag">${a.type}</span><span class="tag">${b.type}</span></div>`}
+let scale=1,tx=0,ty=0,drag=false,last={x:0,y:0};function apply(){viewport.setAttribute('transform',`translate(${tx} ${ty}) scale(${scale})`)}function zoom(f,cx=600,cy=425){const ns=Math.max(.48,Math.min(2.4,scale*f));tx=cx-(cx-tx)*ns/scale;ty=cy-(cy-ty)*ns/scale;scale=ns;apply()}
+svg.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY<0?1.12:.89,e.offsetX*1200/svg.clientWidth,e.offsetY*850/svg.clientHeight)},{passive:false});svg.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.edge-group'))return;drag=true;last={x:e.clientX,y:e.clientY};svg.setPointerCapture(e.pointerId);svg.classList.add('dragging')});svg.addEventListener('pointermove',e=>{if(!drag)return;tx+=(e.clientX-last.x)*1200/svg.clientWidth;ty+=(e.clientY-last.y)*850/svg.clientHeight;last={x:e.clientX,y:e.clientY};apply()});svg.addEventListener('pointerup',()=>{drag=false;svg.classList.remove('dragging')});
+document.getElementById('zoomIn').onclick=()=>zoom(1.2);document.getElementById('zoomOut').onclick=()=>zoom(.83);document.getElementById('reset').onclick=()=>{scale=1;tx=0;ty=0;apply();document.getElementById('search').value='';document.querySelectorAll('.dim').forEach(x=>x.classList.remove('dim'))};
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();nodes.forEach(n=>document.querySelector(`.node[data-id="${n.id}"]`).classList.toggle('dim',!!q&&!([n.label,n.summary,...n.tags].join(' ').toLowerCase().includes(q))));edges.forEach(ed=>{const on=!q||[nodeMap[ed.a],nodeMap[ed.b]].some(n=>[n.label,n.summary,...n.tags].join(' ').toLowerCase().includes(q));document.querySelector(`.edge-group[data-id="${ed.id}"]`).classList.toggle('dim',!on)})});
+</script>
+</body>
+</html>
+
